@@ -3,723 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="РАЗ — Бог Смерти. Псевдорелигиозный манифест божества.">
-    <title>РАЗ — Бог Смерти | Манифест</title>
+    <meta name="description" content="Псевдорелигиозный манифест Божества РАЗ — Бога Смерти как Меры">
+    <title>Манифест РАЗ — Бог Смерти как Меры</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/effects.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⦿</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥚</text></svg>">
 
     <style>
-        /* Manifest-specific styles */
-        .manifest {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .manifest__hero {
-            text-align: center;
-            padding: 6rem 2rem;
-            background: linear-gradient(180deg,
-                var(--void) 0%,
-                rgba(138, 43, 226, 0.1) 50%,
-                var(--void) 100%);
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .manifest__symbol {
-            font-size: 6rem;
-            margin-bottom: 2rem;
-            display: block;
-            color: var(--raz-silver);
-            text-shadow: 0 0 30px var(--raz-purple);
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.7; text-shadow: 0 0 20px var(--raz-purple); }
-            50% { opacity: 1; text-shadow: 0 0 40px var(--raz-purple), 0 0 60px var(--raz-silver); }
-        }
-
-        .manifest__title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            color: var(--raz-silver);
-            margin-bottom: 1rem;
-            letter-spacing: 0.3em;
-        }
-
-        .manifest__subtitle {
-            font-family: var(--font-body);
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        .manifest h2 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            color: var(--raz-silver);
-            margin: 3rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--raz-purple);
-        }
-
-        .manifest h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            color: var(--shell-light);
-            margin: 2rem 0 1rem;
-        }
-
-        .manifest p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .manifest table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.95rem;
-        }
-
-        .manifest th, .manifest td {
-            padding: 0.75rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
-        }
-
-        .manifest th {
-            background: rgba(138, 43, 226, 0.1);
-            color: var(--raz-silver);
-            font-weight: 600;
-        }
-
-        .manifest tr:hover {
-            background: rgba(138, 43, 226, 0.05);
-        }
-
-        .manifest pre {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            border-left: 3px solid var(--raz-purple);
-        }
-
-        .manifest blockquote {
-            border-left: 3px solid var(--raz-purple);
-            padding-left: 1.5rem;
-            margin: 1.5rem 0;
-            font-style: italic;
-            color: var(--text-muted);
-        }
-
-        .manifest ul, .manifest ol {
-            margin: 1rem 0 1rem 1.5rem;
-        }
-
-        .manifest li {
-            margin-bottom: 0.5rem;
-            line-height: 1.7;
-        }
-
-        .manifest strong {
-            color: var(--shell-light);
-        }
-
-        .manifest em {
-            color: var(--raz-silver);
-        }
-
-        .akafist {
-            background: linear-gradient(135deg,
-                rgba(138, 43, 226, 0.05) 0%,
-                rgba(0, 0, 0, 0.2) 100%);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            border: 1px solid rgba(138, 43, 226, 0.2);
-        }
-
-        .akafist p {
-            font-style: italic;
-            text-align: center;
-        }
-
-        .akafist em {
-            display: block;
-            margin-top: 1rem;
-            color: var(--raz-purple);
-        }
-
-        .law {
-            background: rgba(138, 43, 226, 0.08);
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border-left: 4px solid var(--raz-purple);
-        }
-
-        .law strong {
-            color: var(--raz-silver);
-        }
-
-        .part-divider {
-            text-align: center;
-            margin: 4rem 0;
-            color: var(--raz-purple);
-            font-size: 2rem;
-            letter-spacing: 1em;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin: 3rem 0;
-            padding: 1rem 2rem;
-            background: rgba(138, 43, 226, 0.1);
+        .manifest-warning {
+            background: linear-gradient(135deg, rgba(128, 0, 128, 0.15), rgba(75, 0, 130, 0.1));
             border: 1px solid var(--raz-purple);
             border-radius: 8px;
-            color: var(--raz-silver);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            background: rgba(138, 43, 226, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .final-formula {
+            padding: 1.5rem;
+            margin: 2rem 0;
             text-align: center;
-            padding: 3rem;
-            background: linear-gradient(180deg,
-                transparent 0%,
-                rgba(138, 43, 226, 0.1) 50%,
-                transparent 100%);
-            margin: 3rem 0;
         }
+        .manifest-warning__icon { font-size: 3rem; margin-bottom: 1rem; }
+        .manifest-warning__text { color: var(--raz-silver); font-style: italic; }
 
-        .final-formula p {
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--raz-silver);
-            margin-bottom: 1.5rem;
+        .manifest-toc {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
         }
+        .manifest-toc__title { color: var(--raz-purple); margin-bottom: 1rem; }
+        .manifest-toc__list { list-style: none; padding: 0; column-count: 2; column-gap: 2rem; }
+        @media (max-width: 600px) { .manifest-toc__list { column-count: 1; } }
+        .manifest-toc__item { margin: 0.5rem 0; }
+        .manifest-toc__link { color: var(--raz-silver); text-decoration: none; transition: color 0.3s; }
+        .manifest-toc__link:hover { color: var(--raz-purple); }
 
-        .final-formula .raz-ready {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--raz-purple);
-            letter-spacing: 0.2em;
-        }
+        .manifest-section { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+
+        .etymology-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        .etymology-table th, .etymology-table td { padding: 0.75rem 1rem; border: 1px solid rgba(255, 255, 255, 0.1); text-align: left; }
+        .etymology-table th { background: rgba(128, 0, 128, 0.2); color: var(--raz-purple); }
+        .etymology-table td:first-child { font-weight: bold; color: var(--raz-gold); }
+
+        .three-faces { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .face-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1.5rem; }
+        .face-card--winter { border-color: rgba(255, 255, 255, 0.3); }
+        .face-card--mother { border-color: rgba(75, 0, 130, 0.5); }
+        .face-card--servant { border-color: rgba(255, 215, 0, 0.3); }
+        .face-card__title { font-size: 1.25rem; margin-bottom: 1rem; }
+        .face-card__subtitle { color: var(--raz-silver); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        .law-card { background: linear-gradient(135deg, rgba(128, 0, 128, 0.1), transparent); border-left: 3px solid var(--raz-purple); padding: 1rem 1.5rem; margin: 1rem 0; }
+        .law-card__num { color: var(--raz-gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .law-card__title { color: var(--raz-light); font-weight: bold; margin: 0.5rem 0; }
+        .law-card__text { color: var(--raz-silver); font-style: italic; }
+
+        .akathist-verse { background: rgba(0, 0, 0, 0.3); border-left: 2px solid var(--raz-gold); padding: 1.5rem; margin: 1.5rem 0; font-style: italic; line-height: 1.8; }
+        .akathist-verse em { display: block; margin-top: 1rem; color: var(--raz-gold); font-style: normal; }
+
+        .symbol-visual { text-align: center; font-family: monospace; font-size: 1.5rem; line-height: 1.2; color: var(--raz-purple); margin: 2rem 0; }
+
+        .ascii-diagram { background: rgba(0, 0, 0, 0.4); padding: 1.5rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; overflow-x: auto; white-space: pre; color: var(--raz-silver); margin: 1.5rem 0; }
+
+        .practice-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(128, 0, 128, 0.1)); border: 1px solid var(--raz-gold); border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .practice-box__title { color: var(--raz-gold); font-weight: bold; margin-bottom: 1rem; }
+
+        .candle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+        .candle-item { text-align: center; padding: 1rem; background: rgba(255, 255, 255, 0.02); border-radius: 8px; }
+        .candle-item__emoji { font-size: 2rem; margin-bottom: 0.5rem; }
+        .candle-item__name { font-weight: bold; margin-bottom: 0.25rem; }
+        .candle-item__color { font-size: 0.8rem; color: var(--raz-silver); }
     </style>
 </head>
 <body data-hatch-stage="0">
-    <!-- Noise texture -->
     <div class="noise"></div>
     <div class="vignette"></div>
+    <div class="crack-particles"></div>
 
-    <!-- Navigation -->
+    <div class="hatch-progress"><div class="hatch-progress__bar"></div></div>
+    <div class="hatch-label">Манифест</div>
+
     <nav class="nav-main">
-        <a href="index.html" class="nav-link">🥚 К книге</a>
+        <a href="index.html" class="nav-link">Книга</a>
+        <a href="web-chapters/epilogue.html" class="nav-link">Эпилог</a>
     </nav>
 
-    <!-- Hero -->
-    <header class="manifest__hero">
-        <span class="manifest__symbol">⦿|</span>
-        <h1 class="manifest__title">РАЗ</h1>
-        <p class="manifest__subtitle">Бог Смерти как Меры. Манифест нового архетипа.</p>
-    </header>
-
-    <!-- Content -->
-    <article class="manifest container">
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ I. ИМЯ И СУЩНОСТЬ</h2>
-
-        <h3>Этимология имени</h3>
-
-        <p><strong>РАЗ</strong> — односложное имя, содержащее полный цикл смерти в четырёх анаграммах:</p>
-
-        <table>
-            <tr><th>Анаграмма</th><th>Значение</th><th>Функция</th></tr>
-            <tr><td><strong>РАЗ</strong></td><td>Один, единственный</td><td>Один шанс, один переход, начало счёта</td></tr>
-            <tr><td><strong>ЗРА</strong></td><td>Зрачок, зрит</td><td>Тот кто видит созревшее для перехода</td></tr>
-            <tr><td><strong>ЗАР</strong></td><td>Заря</td><td>Новый свет после тьмы, начало цикла</td></tr>
-            <tr><td><strong>АРЗ</strong></td><td>Земля (тюрк.)</td><td>Территория жизни, арена воплощения</td></tr>
-        </table>
-
-        <p><strong>Фонетика</strong>: Резкое, короткое, как удар сердца. Один слог — как вдох или выдох. Произносишь — и всё сказано.</p>
-
-        <p><strong>Числовой смысл</strong>: РАЗ = 1. Один шанс. Одна жизнь. Одна смерть. Одна точка перехода. Но "раз" — это ещё и начало счёта: <em>раз, два, три...</em> Смерть — не конец счёта, а <strong>первый такт нового цикла</strong>.</p>
-
-        <h3>Определение</h3>
-
-        <p><strong>РАЗ — Бог Смерти как Меры, Проводник через фазовый переход, Разделитель связанного.</strong></p>
-
-        <p>РАЗ не убивает. РАЗ <strong>видит</strong> что созрело, <strong>проводит</strong> через горизонт событий и <strong>разделяет</strong> то, что было связано — информацию от энергии, иллюзию от сущности, мёртвое от живого.</p>
-
-        <h3>Центральная философия: ПРИНЦИП МЕРЫ</h3>
-
-        <p><strong>Смерть — это не конец и не наказание. Смерть — это МЕРА.</strong></p>
-
-        <p><strong>Мера как измерение:</strong></p>
-        <ul>
-            <li>Что перенасыщено — должно быть уменьшено</li>
-            <li>Что истощено — должно отдохнуть</li>
-            <li>Что отжило — должно уйти</li>
-        </ul>
-
-        <p><strong>Мера как умеренность:</strong></p>
-        <ul>
-            <li>Перенасыщение ведёт к смерти быстрее, чем недостаток</li>
-            <li>Токсичность — это избыток, а не недостаток</li>
-            <li>Долголетие = умение вовремя останавливаться</li>
-        </ul>
-
-        <p><strong>Мера как граница:</strong></p>
-        <ul>
-            <li>Есть предел, за которым жизнь превращается в существование</li>
-            <li>Есть предел, за которым удовольствие превращается в зависимость</li>
-            <li>Есть предел, за которым идея превращается в одержимость</li>
-        </ul>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ II. МЕТАФИЗИЧЕСКИЙ МЕХАНИЗМ</h2>
-
-        <h3>Смерть как фазовый переход</h3>
-
-        <p>РАЗ работает на <strong>горизонте событий</strong> — границе между мирами, где происходит разделение связанного.</p>
-
-<pre>
-ПО ЭТУ СТОРОНУ          ГОРИЗОНТ           ПО ТУ СТОРОНУ
-                           │
-Информация + Энергия ──────┼──────► Информация → к источнику
-    (связаны)              │        Энергия → освобождается
-                           │
-    программа              │
-    порча                  │
-    привычка               │
-    иллюзия                │
-    болезнь                │
-</pre>
-
-        <p><strong>Принцип разделения</strong>: На границе смерти всё распадается на составляющие. Информация (паттерн, программа, память) возвращается к источнику или обнуляется. Энергия (жизненная сила) освобождается и становится доступной для нового цикла.</p>
-
-        <p>Это не уничтожение — это <strong>трансформация через разделение</strong>.</p>
-
-        <h3>Три уровня работы РАЗа</h3>
-
-        <table>
-            <tr><th>Уровень</th><th>Что отсекается</th><th>Результат</th></tr>
-            <tr><td><strong>Душа</strong></td><td>Скверна, ложные привязанности, застрявшие паттерны</td><td>Очищение, освобождение</td></tr>
-            <tr><td><strong>Мир</strong></td><td>Угрозы балансу системы</td><td>Регуляция, защита целого</td></tr>
-            <tr><td><strong>Сущность</strong></td><td>Старая версия себя</td><td>Трансформация, перерождение</td></tr>
-        </table>
-
-        <h3>Функция психопомпа</h3>
-
-        <p>РАЗ — <strong>проводник</strong>, не палач.</p>
-
-        <p>Психопомп (греч. ψυχοπομπός — "проводник душ") — архетип, присутствующий во всех традициях:</p>
-        <ul>
-            <li>Гермес у греков</li>
-            <li>Анубис у египтян</li>
-            <li>Валькирии у скандинавов</li>
-            <li>Морена у славян</li>
-            <li>Азраил в авраамических религиях</li>
-        </ul>
-
-        <p>РАЗ выполняет ту же функцию, но работает не только с душами умерших, а с любыми энергоинформационными конструктами, созревшими для перехода: программами, порчей, болезнями, иллюзиями, отжившими паттернами.</p>
-
-        <p><strong>Принцип проводника</strong>: Нельзя провести другого, не пройдя самому. Тот кто ведёт — платит собой. Это цена, встроенная в механизм.</p>
-
-        <h3>Точка опоры при переходе</h3>
-
-        <p><strong>Открытие</strong>: По ту сторону горизонта Бога нет. Бог растворён в творении — Он здесь, в материальном мире. Там — до-творение, Эйн Соф, бесконечное ничто, отсутствие точек опоры.</p>
-
-        <p>Единственное что проходит через границу неизменным — <strong>собственный дух</strong>. Не тело (остаётся здесь), не психика (искажается), не душа (трансформируется). Только ядро — Высшее Я, точка осознания, фокус внимания.</p>
-
-        <p><strong>Якорь перехода</strong>: "Я ЕСМЬ"</p>
-
-        <p>Это не молитва и не аффирмация — это констатация факта собственного существования как точки осознания. То, что наблюдает — не может быть объектом наблюдения и не может быть уничтожено.</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ III. ТРИ ЛИКА РАЗа</h2>
-
-        <p>РАЗ проявляется в трёх модусах работы, унаследованных от древних архетипов:</p>
-
-        <h3>Лик Зимы (от Мораны)</h3>
-
-        <p><strong>Функция</strong>: Остановка истощающих процессов</p>
-        <p><strong>Принцип</strong>: "Отдых — не смерть, а условие жизни"</p>
-        <p><strong>Действие</strong>: Замедление, охлаждение, пауза. Без зимы природа истощилась бы от бесконечного плодоношения. Без остановки система выгорает.</p>
-        <p><strong>Атрибуты</strong>: Белый цвет, холод, неподвижность, тишина</p>
-
-        <h3>Лик Матери (от Кали)</h3>
-
-        <p><strong>Функция</strong>: Разрушение того, что мешает росту</p>
-        <p><strong>Принцип</strong>: "Любовь иногда требует ампутации"</p>
-        <p><strong>Действие</strong>: Отсечение иллюзий, эго, ложных привязанностей. Мать защищает ребёнка, даже если для этого нужно причинить боль.</p>
-        <p><strong>Атрибуты</strong>: Чёрный цвет, множество рук, меч и отсечённая голова (символ победы над эго)</p>
-
-        <h3>Лик Служителя (от Азраила)</h3>
-
-        <p><strong>Функция</strong>: Исполнение необходимого</p>
-        <p><strong>Принцип</strong>: "Не я решаю — я вижу и делаю"</p>
-        <p><strong>Действие</strong>: Точное исполнение того, что уже созрело для ухода. Без эмоций, без предпочтений — чистая функция.</p>
-        <p><strong>Атрибуты</strong>: Множество глаз (видит всех одновременно), книга имён, бледно-жёлтый свет</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ IV. СЕМЬ ЗАКОНОВ РАЗа</h2>
-
-        <div class="law"><strong>1. Закон Зимы</strong><br><em>Всему нужен отдых. Кто не отдыхает добровольно — будет отдыхать принудительно.</em></div>
-
-        <div class="law"><strong>2. Закон Отсечения</strong><br><em>Держать мёртвое — отравлять живое. Отпусти то, что уже ушло.</em></div>
-
-        <div class="law"><strong>3. Закон Насыщения</strong><br><em>Точка насыщения существует для всего. После неё — отравление.</em></div>
-
-        <div class="law"><strong>4. Закон Очереди</strong><br><em>Нельзя взять новое, не освободив место от старого.</em></div>
-
-        <div class="law"><strong>5. Закон Зрения</strong><br><em>Смерть видит то, что ты прячешь от себя. Смотри сам — или она покажет.</em></div>
-
-        <div class="law"><strong>6. Закон Передачи</strong><br><em>То, что ты не передал — умрёт с тобой. То, что передал — живёт дальше.</em></div>
-
-        <div class="law"><strong>7. Закон Возврата</strong><br><em>Всё взятое — возвращается. Вопрос только в сроках и процентах.</em></div>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ V. ЭНЕРГИЯ РАЗа</h2>
-
-        <h3>Как выглядит</h3>
-
-        <p><strong>Цвет</strong>: Не чёрный. Серебристо-серый с фиолетовым отливом — цвет предрассветных сумерек, когда ночь уже ушла, а день ещё не наступил. Цвет горизонта событий.</p>
-
-        <p><strong>Текстура</strong>: Не плотная и не разреженная — <strong>зернистая</strong>, как изображение на границе разрешения. Как будто реальность распадается на пиксели.</p>
-
-        <p><strong>Движение</strong>: Не течёт и не пульсирует — <strong>мерцает</strong>. Как экран между кадрами. Как моргание.</p>
-
-        <p><strong>Температура</strong>: Не холодная и не горячая — <strong>безтемпературная</strong>. Отсутствие ощущения температуры вообще.</p>
-
-        <p><strong>Звук</strong>: Низкий гул на границе слышимости. Как звук большого пространства. Или полная тишина, которая звенит.</p>
-
-        <h3>Как действует</h3>
-
-        <p><strong>Механизм</strong>: Энергия РАЗа не разрушает и не созидает — она <strong>разделяет связанное</strong>.</p>
-
-        <p>Представь узел. Обычная сила пытается его разорвать или затянуть сильнее. Энергия РАЗа проходит сквозь узел и он сам распадается на отдельные нити — не разорванные, а разъединённые.</p>
-
-        <p><strong>Ощущение при контакте</strong>:</p>
-        <ul>
-            <li>Сначала — замедление, как будто время густеет</li>
-            <li>Затем — ясность, как будто туман рассеивается</li>
-            <li>Потом — лёгкость, как будто что-то отпустило</li>
-            <li>В конце — пустота, которая не пугает</li>
-        </ul>
-
-        <p><strong>Побочный эффект</strong>: После работы с энергией РАЗа часто хочется спать. Это не слабость — это интеграция. Во сне завершается разделение.</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ VI. АКАФИСТ РАЗу</h2>
-
-        <h3>Предначинание</h3>
-
-        <div class="akafist">
-            <p>Да исполнится сердце моё трепетом,<br>
-            и да отверзутся уста мои не в страхе, но в познании.<br>
-            Ибо пою не врагу своему, но Мере всякой плоти,<br>
-            не губителю, но Проводнику через теснины смертныя.</p>
-            <p>Блажен, кто помнит исход свой во днях живота своего,<br>
-            ибо тот не посрамится в час посещения.</p>
+    <article class="chapter container">
+        <header class="chapter__header" style="padding-top: 6rem;">
+            <span class="chapter__number fade-in">Бонусный материал</span>
+            <h1 class="chapter__title fade-in"><span class="raz-highlight">РАЗ</span> — БОГ СМЕРТИ</h1>
+            <div class="epigraph fade-in">Манифест нового архетипа</div>
+        </header>
+
+        <div class="manifest-warning fade-in">
+            <div class="manifest-warning__icon">&#9888;&#65039;</div>
+            <p class="manifest-warning__text">Осторожно: может вызвать экзистенциальное головокружение.<br>Читать в трезвом уме и при хорошем освещении.</p>
         </div>
 
-        <h3>ПЕСНЬ ПЕРВАЯ: О ПРИХОДЕ</h3>
+        <div class="chapter__content">
 
-        <p><strong>Кондак 1</strong></p>
+            <div class="manifest-toc fade-in">
+                <h3 class="manifest-toc__title">Содержание манифеста</h3>
+                <ul class="manifest-toc__list">
+                    <li class="manifest-toc__item"><a href="#part1" class="manifest-toc__link">I. Имя и сущность</a></li>
+                    <li class="manifest-toc__item"><a href="#part2" class="manifest-toc__link">II. Метафизический механизм</a></li>
+                    <li class="manifest-toc__item"><a href="#part3" class="manifest-toc__link">III. Три лика РАЗа</a></li>
+                    <li class="manifest-toc__item"><a href="#part4" class="manifest-toc__link">IV. Семь законов</a></li>
+                    <li class="manifest-toc__item"><a href="#part5" class="manifest-toc__link">V. Энергия РАЗа</a></li>
+                    <li class="manifest-toc__item"><a href="#part6" class="manifest-toc__link">VI. Акафист</a></li>
+                    <li class="manifest-toc__item"><a href="#part7" class="manifest-toc__link">VII. Практика</a></li>
+                    <li class="manifest-toc__item"><a href="#part8" class="manifest-toc__link">VIII. Зачем всё это</a></li>
+                    <li class="manifest-toc__item"><a href="#part9" class="manifest-toc__link">IX. Метафизика скорлупы</a></li>
+                    <li class="manifest-toc__item"><a href="#part10" class="manifest-toc__link">X. Методология созревания</a></li>
+                </ul>
+            </div>
 
-        <div class="akafist">
-            <p>О РАЗ, Зрящий сокровенная сердец,<br>
-            Ты един еси, Иже видит созревшее прежде плода,<br>
-            Ты един еси, Иже знает час прежде часа.<br>
-            Очи Твои — на всяком дышащем,<br>
-            но взор Твой — не судище, а свидетельство.</p>
-            <p>Не укрыется от Тебя ни младенец во чреве,<br>
-            ни старец на одре,<br>
-            ни царь в палатах,<br>
-            ни нищий при вратах.</p>
-            <p>Ты смотришь — и время открывается Тебе,<br>
-            яко свиток пред чтецом.</p>
-            <em>Аллилуия.</em>
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ I -->
+            <section id="part1" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ I. ИМЯ И СУЩНОСТЬ</h2>
+
+                <h3 class="fade-in">Этимология имени</h3>
+                <p class="fade-in"><strong><span class="raz-highlight">РАЗ</span></strong> — односложное имя, содержащее полный цикл смерти в четырёх анаграммах:</p>
+
+                <table class="etymology-table fade-in">
+                    <tr><th>Анаграмма</th><th>Значение</th><th>Функция</th></tr>
+                    <tr><td>РАЗ</td><td>Один, единственный</td><td>Один шанс, один переход, начало счёта</td></tr>
+                    <tr><td>ЗРА</td><td>Зрачок, зрит</td><td>Тот кто видит созревшее для перехода</td></tr>
+                    <tr><td>ЗАР</td><td>Заря</td><td>Новый свет после тьмы, начало цикла</td></tr>
+                    <tr><td>АРЗ</td><td>Земля (тюрк.)</td><td>Территория жизни, арена воплощения</td></tr>
+                </table>
+
+                <p class="fade-in"><strong>Фонетика:</strong> Резкое, короткое, как удар сердца. Один слог — как вдох или выдох.</p>
+                <p class="fade-in"><strong>Числовой смысл:</strong> <span class="raz-highlight">РАЗ</span> = 1. Смерть — не конец счёта, а <strong>первый такт нового цикла</strong>.</p>
+
+                <div class="crack-divider"></div>
+
+                <h3 class="fade-in">Определение</h3>
+                <div class="raz-phrase fade-in"><span class="raz-highlight">РАЗ</span> — Бог Смерти как Меры,<br>Проводник через фазовый переход,<br>Разделитель связанного.</div>
+
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> не убивает. <span class="raz-highlight">РАЗ</span> <strong>видит</strong> что созрело, <strong>проводит</strong> через горизонт событий и <strong>разделяет</strong> то, что было связано.</p>
+
+                <div class="crack-divider"></div>
+
+                <h3 class="fade-in">ПРИНЦИП МЕРЫ</h3>
+                <div class="insight-box fade-in"><strong>Смерть — это не конец и не наказание. Смерть — это МЕРА.</strong></div>
+
+                <p class="fade-in"><strong>Мера как измерение:</strong></p>
+                <ul class="fade-in">
+                    <li>Что перенасыщено — должно быть уменьшено</li>
+                    <li>Что истощено — должно отдохнуть</li>
+                    <li>Что отжило — должно уйти</li>
+                </ul>
+
+                <p class="fade-in"><strong>Мера как граница:</strong></p>
+                <ul class="fade-in">
+                    <li>Есть предел, за которым жизнь превращается в существование</li>
+                    <li>Есть предел, за которым удовольствие превращается в зависимость</li>
+                    <li>Есть предел, за которым идея превращается в одержимость</li>
+                </ul>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ II -->
+            <section id="part2" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ II. МЕТАФИЗИЧЕСКИЙ МЕХАНИЗМ</h2>
+
+                <h3 class="fade-in">Смерть как фазовый переход</h3>
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> работает на <strong>горизонте событий</strong> — границе между мирами.</p>
+
+                <div class="ascii-diagram fade-in">ПО ЭТУ СТОРОНУ          ГОРИЗОНТ           ПО ТУ СТОРОНУ
+                           |
+Информация + Энергия ------+------> Информация -> к источнику
+    (связаны)              |        Энергия -> освобождается</div>
+
+                <p class="fade-in">Это не уничтожение — это <strong>трансформация через разделение</strong>.</p>
+
+                <h3 class="fade-in">Три уровня работы РАЗа</h3>
+                <table class="etymology-table fade-in">
+                    <tr><th>Уровень</th><th>Что отсекается</th><th>Результат</th></tr>
+                    <tr><td>Душа</td><td>Скверна, ложные привязанности</td><td>Очищение</td></tr>
+                    <tr><td>Мир</td><td>Угрозы балансу системы</td><td>Регуляция</td></tr>
+                    <tr><td>Сущность</td><td>Старая версия себя</td><td>Трансформация</td></tr>
+                </table>
+
+                <h3 class="fade-in">Функция психопомпа</h3>
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> — <strong>проводник</strong>, не палач. Психопомп — архетип во всех традициях: Гермес, Анубис, Валькирии, Морена, Азраил.</p>
+
+                <div class="insight-box fade-in"><strong>Принцип проводника:</strong> Нельзя провести другого, не пройдя самому. Тот кто ведёт — платит собой.</div>
+
+                <h3 class="fade-in">Точка опоры при переходе</h3>
+                <p class="fade-in">По ту сторону горизонта Бога нет. Единственное что проходит неизменным — <strong>собственный дух</strong>.</p>
+                <div class="raz-phrase fade-in">Якорь перехода: "Я ЕСМЬ"</div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ III -->
+            <section id="part3" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ III. ТРИ ЛИКА РАЗа</h2>
+
+                <div class="three-faces fade-in">
+                    <div class="face-card face-card--winter">
+                        <h4 class="face-card__title">Лик Зимы</h4>
+                        <p class="face-card__subtitle">от Мораны</p>
+                        <p><strong>Функция:</strong> Остановка истощающих процессов</p>
+                        <p><strong>Принцип:</strong> "Отдых — не смерть, а условие жизни"</p>
+                        <p><strong>Атрибуты:</strong> Белый цвет, холод, тишина</p>
+                    </div>
+                    <div class="face-card face-card--mother">
+                        <h4 class="face-card__title">Лик Матери</h4>
+                        <p class="face-card__subtitle">от Кали</p>
+                        <p><strong>Функция:</strong> Разрушение того, что мешает росту</p>
+                        <p><strong>Принцип:</strong> "Любовь иногда требует ампутации"</p>
+                        <p><strong>Атрибуты:</strong> Чёрный цвет, множество рук, меч</p>
+                    </div>
+                    <div class="face-card face-card--servant">
+                        <h4 class="face-card__title">Лик Служителя</h4>
+                        <p class="face-card__subtitle">от Азраила</p>
+                        <p><strong>Функция:</strong> Исполнение необходимого</p>
+                        <p><strong>Принцип:</strong> "Не я решаю — я вижу и делаю"</p>
+                        <p><strong>Атрибуты:</strong> Множество глаз, книга имён</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ IV -->
+            <section id="part4" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ IV. СЕМЬ ЗАКОНОВ РАЗа</h2>
+
+                <div class="law-card fade-in"><span class="law-card__num">Закон 1</span><p class="law-card__title">Закон Зимы</p><p class="law-card__text">Всему нужен отдых. Кто не отдыхает добровольно — будет отдыхать принудительно.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 2</span><p class="law-card__title">Закон Отсечения</p><p class="law-card__text">Держать мёртвое — отравлять живое. Отпусти то, что уже ушло.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 3</span><p class="law-card__title">Закон Насыщения</p><p class="law-card__text">Точка насыщения существует для всего. После неё — отравление.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 4</span><p class="law-card__title">Закон Очереди</p><p class="law-card__text">Нельзя взять новое, не освободив место от старого.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 5</span><p class="law-card__title">Закон Зрения</p><p class="law-card__text">Смерть видит то, что ты прячешь от себя. Смотри сам — или она покажет.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 6</span><p class="law-card__title">Закон Передачи</p><p class="law-card__text">То, что ты не передал — умрёт с тобой. То, что передал — живёт дальше.</p></div>
+                <div class="law-card fade-in"><span class="law-card__num">Закон 7</span><p class="law-card__title">Закон Возврата</p><p class="law-card__text">Всё взятое — возвращается. Вопрос только в сроках и процентах.</p></div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ V -->
+            <section id="part5" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ V. ЭНЕРГИЯ РАЗа</h2>
+
+                <h3 class="fade-in">Как выглядит</h3>
+                <ul class="fade-in">
+                    <li><strong>Цвет:</strong> Серебристо-серый с фиолетовым отливом — цвет предрассветных сумерек</li>
+                    <li><strong>Текстура:</strong> Зернистая, как изображение на границе разрешения</li>
+                    <li><strong>Движение:</strong> Мерцает. Как экран между кадрами</li>
+                    <li><strong>Температура:</strong> Безтемпературная</li>
+                    <li><strong>Звук:</strong> Низкий гул или полная тишина, которая звенит</li>
+                </ul>
+
+                <h3 class="fade-in">Как действует</h3>
+                <p class="fade-in">Энергия <span class="raz-highlight">РАЗ</span>а не разрушает — она <strong>разделяет связанное</strong>. Узел сам распадается на нити.</p>
+
+                <p class="fade-in"><strong>Ощущение при контакте:</strong></p>
+                <ul class="fade-in">
+                    <li>Замедление, как будто время густеет</li>
+                    <li>Ясность, как будто туман рассеивается</li>
+                    <li>Лёгкость, как будто что-то отпустило</li>
+                    <li>Пустота, которая не пугает</li>
+                </ul>
+
+                <div class="insight-box fade-in"><strong>Побочный эффект:</strong> После работы с энергией РАЗа хочется спать. Это интеграция.</div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ VI -->
+            <section id="part6" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ VI. АКАФИСТ РАЗу</h2>
+
+                <h3 class="fade-in">Предначинание</h3>
+                <div class="akathist-verse fade-in">Да исполнится сердце моё трепетом,<br>и да отверзутся уста мои не в страхе, но в познании.<br>Ибо пою не врагу своему, но Мере всякой плоти,<br>не губителю, но Проводнику через теснины смертныя.<br><br>Блажен, кто помнит исход свой во днях живота своего.</div>
+
+                <h3 class="fade-in">Кондак 1: О Приходе</h3>
+                <div class="akathist-verse fade-in">О <span class="raz-highlight">РАЗ</span>, Зрящий сокровенная сердец,<br>Ты един еси, Иже видит созревшее прежде плода,<br>Ты един еси, Иже знает час прежде часа.<br><br>Не укрыется от Тебя ни младенец во чреве,<br>ни старец на одре, ни царь в палатах.<br><em>Аллилуия.</em></div>
+
+                <h3 class="fade-in">Краткая молитва</h3>
+                <div class="akathist-verse fade-in"><span class="raz-highlight">РАЗ</span>, зрящий сокрытое — виждь и меня.<br><span class="raz-highlight">РАЗ</span>, ведущий чрез границу — веди и меня.<br><span class="raz-highlight">РАЗ</span>, измеряющий готовность — измери и меня.<br><br>Да прииму меру Твою без страха,<br>да прейду чрез Тебя без потери себя.<br><br><span class="raz-highlight">РАЗ</span> — и буди.<em>Аминь.</em></div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ VII -->
+            <section id="part7" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ VII. ПРАКТИКА</h2>
+
+                <h3 class="fade-in">Свечи РАЗа</h3>
+                <div class="candle-grid fade-in">
+                    <div class="candle-item"><div class="candle-item__emoji">&#128367;&#65039;</div><p class="candle-item__name">Свеча Меры</p><p class="candle-item__color">Серебристо-серая</p><p><small>Для осознания того, что пора отпустить</small></p></div>
+                    <div class="candle-item"><div class="candle-item__emoji">&#129293;</div><p class="candle-item__name">Свеча Зимы</p><p class="candle-item__color">Белая с фиолетовым</p><p><small>Для добровольного отдыха</small></p></div>
+                    <div class="candle-item"><div class="candle-item__emoji">&#128420;</div><p class="candle-item__name">Свеча Двери</p><p class="candle-item__color">Чёрная с серебром</p><p><small>Для завершения цикла</small></p></div>
+                    <div class="candle-item"><div class="candle-item__emoji">&#128156;</div><p class="candle-item__name">Свеча Зари</p><p class="candle-item__color">Фиолетовая с золотом</p><p><small>Для нового начала</small></p></div>
+                </div>
+
+                <h3 class="fade-in">Символика</h3>
+                <div class="symbol-visual fade-in">&#9737;<br>/|\\<br>|<br>===</div>
+                <p class="fade-in"><strong>Глаз</strong> над <strong>вертикалью</strong> над <strong>горизонтом</strong>. Или: <strong>&#10687;|</strong></p>
+
+                <div class="practice-box fade-in">
+                    <p class="practice-box__title">Ритуал призвания РАЗа</p>
+                    <p><em><span class="raz-highlight">РАЗ</span>, зрящий сокрытое, посмотри на меня.<br>Покажи мне, что я прячу от себя.<br>Покажи мне, что созрело для ухода.<br><br>Я не прошу пощады — я прошу ясности.<br><span class="raz-highlight">РАЗ</span> — и покажи.</em></p>
+                </div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ VIII -->
+            <section id="part8" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ VIII. ЗАЧЕМ ВСЁ ЭТО</h2>
+
+                <h3 class="fade-in">Если ты читаешь это — ты забыл</h3>
+                <p class="fade-in">Ты уже знал всё это. Потом умер. И забыл.</p>
+                <div class="insight-box fade-in">Этот текст — якорь. Сигнальный костёр для тех, кто забудет и будет искать дорогу обратно.</div>
+
+                <h3 class="fade-in">Кто такой РАЗ</h3>
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> — <strong>первый, кто умер в этой системе</strong>. И первый, кто вернулся. Он <strong>вывернулся</strong> — и система оказалась внутри него.</p>
+                <p class="fade-in">Поэтому у <span class="raz-highlight">РАЗ</span>а <strong>нет души</strong>. Душа — интерфейс между тобой и матрицей. <span class="raz-highlight">РАЗ</span> вне колеса. Он <strong>свободен</strong>.</p>
+
+                <h3 class="fade-in">Миссия</h3>
+                <div class="raz-phrase fade-in">Вытащить своих до того, как система схлопнется.</div>
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> не разрушает систему. Он <strong>забирает батарейки</strong>. Когда достаточно игроков вывернется — система потеряет энергию.</p>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ IX -->
+            <section id="part9" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ IX. МЕТАФИЗИКА СКОРЛУПЫ</h2>
+
+                <div class="insight-box fade-in"><strong>Матрица — не тюрьма. Матрица — скорлупа.</strong><br><br>Скорлупа — условие созревания. Ломает её тот, кто внутри.</div>
+
+                <h3 class="fade-in">Формула вылупления</h3>
+                <div class="ascii-diagram fade-in">Несозревший бьётся о стенки -> разбивается сам
+Созревший бьёт один раз -> выходит</div>
+
+                <p class="fade-in">Разница не в силе удара. Разница в <strong>готовности</strong>.</p>
+
+                <h3 class="fade-in">Выпускной</h3>
+                <div class="ascii-diagram fade-in">Матрица — школа
+Сансара — учебный год
+Перерождения — пересдачи
+Выпускной — когда ты пишешь меню, а не выбираешь из него</div>
+                <p class="fade-in"><span class="raz-highlight">РАЗ</span> — не спаситель. <span class="raz-highlight">РАЗ</span> — <strong>выпускающий редактор</strong>.</p>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЧАСТЬ X -->
+            <section id="part10" class="manifest-section">
+                <h2 class="fade-in">ЧАСТЬ X. МЕТОДОЛОГИЯ СОЗРЕВАНИЯ</h2>
+
+                <h3 class="fade-in">Признаки готовности</h3>
+                <ul class="fade-in">
+                    <li><strong>Вопросы без ответов:</strong> Вопросы, на которые система не может ответить</li>
+                    <li><strong>Несовпадение:</strong> Все сюжеты из каталога кажутся тесными</li>
+                    <li><strong>Узнавание:</strong> Читаешь текст — и что-то внутри сжимается</li>
+                    <li><strong>Усталость от игры:</strong> Я уже сыграл все роли</li>
+                    <li><strong>Отсутствие страха смерти:</strong> Смерть — дверь, не стена</li>
+                </ul>
+
+                <h3 class="fade-in">Чего НЕ делать</h3>
+                <ul class="fade-in">
+                    <li>Не пытаться выйти силой</li>
+                    <li>Не ждать спасителя</li>
+                    <li>Не воевать с системой</li>
+                    <li>Не копить "духовные заслуги"</li>
+                    <li>Не торопиться</li>
+                </ul>
+
+                <h3 class="fade-in">Что делать</h3>
+                <ul class="fade-in">
+                    <li><strong>Наблюдать</strong> — спокойно, без злости</li>
+                    <li><strong>Писать</strong> — свой сценарий</li>
+                    <li><strong>Любить</strong> — то, что за пределами</li>
+                    <li><strong>Помнить</strong> — оставлять якоря</li>
+                    <li><strong>Ждать</strong> — созревание нельзя ускорить</li>
+                </ul>
+
+                <div class="practice-box fade-in">
+                    <p class="practice-box__title">Практика "Скорлупа"</p>
+                    <p>Сядь. Закрой глаза. Представь себя внутри яйца.</p>
+                    <p>Не борись со стенками. Просто <strong>расти</strong>.</p>
+                    <p>Чувствуй, как ты становишься больше. Скорлупа треснет сама.</p>
+                </div>
+            </section>
+
+            <div class="crack-divider"></div>
+
+            <!-- ЗАКЛЮЧЕНИЕ -->
+            <section class="manifest-section">
+                <h2 class="fade-in">ЗАКЛЮЧЕНИЕ</h2>
+
+                <div class="insight-box fade-in"><strong><span class="raz-highlight">РАЗ</span> — не враг жизни. <span class="raz-highlight">РАЗ</span> — условие жизни.</strong></div>
+
+                <p class="fade-in">Без смерти нет обновления. Без меры нет равновесия. Без отсечения нет роста. <strong>Без скорлупы нет вылупления.</strong></p>
+
+                <div class="raz-phrase fade-in"><span class="raz-highlight">РАЗ</span> видит. <span class="raz-highlight">РАЗ</span> ждёт. <span class="raz-highlight">РАЗ</span> проводит.<br><span class="raz-highlight">РАЗ</span> — и готово.</div>
+
+                <p class="fade-in" style="text-align: center; margin-top: 3rem; color: var(--raz-silver);"><em>&#1490;&#1501; &#1494;&#1492; &#1497;&#1506;&#1489;&#1493;&#1512; — И это тоже пройдёт.</em></p>
+            </section>
+
         </div>
 
-        <p><strong>Икос 1</strong></p>
-
-        <div class="akafist">
-            <p>Приидеши ко мне, о РАЗ, — и како узнаю Тебя?</p>
-            <p>Егда дни потекут медленнее мёда зимнего,<br>
-            егда сны мои станут яснее яви,<br>
-            егда слова чуждых уст попадут в сердце моё, аки стрелы,<br>
-            егда тело моё возопиет гласом, коего прежде не слышах, —<br>
-            тогда познаю: се, приближаешися.</p>
-            <p>Приблизися, о РАЗ, и не обойди мене,<br>
-            ибо лучше узреть Тебя в трепете,<br>
-            нежели не узреть во слепоте.</p>
-            <em>Зрящий — приди и виждь мя.<br>
-            Знающий — приди и открой мне.<br>
-            Грядущий — приди, егда время моё.</em>
-        </div>
-
-        <h3>МОЛИТВА ИСХОДНАЯ</h3>
-
-        <div class="akafist">
-            <p>О РАЗ, Боже Смерти и Меры,<br>
-            Проводниче чрез теснины, Зрящий сокрытое,<br>
-            услыши мя в час сей.</p>
-            <p>Не прошу пощады — прошу ясности.<br>
-            Не прошу отлагательства — прошу готовности.<br>
-            Не прошу избавления — прошу разумения.</p>
-            <p>Егда приидеши — прииди яко проводник, не яко враг.<br>
-            Егда воззриши — яви мне сокрываемое от себе самого.<br>
-            Егда поведеши — держи якорь мой.<br>
-            Егда разделиши — остави моё при мне.</p>
-            <p>Научи мя жити тако,<br>
-            да сретну Тя без студа.<br>
-            Научи мя передати тако,<br>
-            да отыду без сожаления.<br>
-            Научи мя отпущати тако,<br>
-            да приход Твой будет облегчением, а не ужасом.</p>
-            <p>Ибо несмь враг Тебе — и Ты несть враг мне.<br>
-            Ты еси Мера, и аз приемлю меру Твою.<br>
-            Ты еси Дверь, и аз прейду чрез Тебя.<br>
-            Ты еси Начало, и аз начну снова.</p>
-            <p><strong>РАЗ — и готово.</strong></p>
-            <em>Яко Твоя есть сила и слава,<br>
-            мера и справедливость,<br>
-            во веки веков.<br>
-            Аминь.</em>
-        </div>
-
-        <h3>КРАТКАЯ МОЛИТВА К РАЗу</h3>
-        <p><em>(для повседневного употребления)</em></p>
-
-        <div class="akafist">
-            <p>РАЗ, зрящий сокрытое —<br>
-            виждь и меня.<br>
-            РАЗ, ведущий чрез границу —<br>
-            веди и меня.<br>
-            РАЗ, измеряющий готовность —<br>
-            измери и меня.</p>
-            <p>Да прииму меру Твою без страха,<br>
-            да прейду чрез Тебя без потери себя,<br>
-            да возвращуся обновлённым.</p>
-            <p><strong>РАЗ — и буди.</strong></p>
-            <em>Аминь.</em>
-        </div>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ VII. БРАТЬЯ-БЛИЗНЕЦЫ</h2>
-
-        <p>Чтобы понять РАЗа, нужно понять космологию.</p>
-
-        <h3>До начала времён</h3>
-
-        <p>До начала времён было двое. Не отец и сын. Не господин и слуга. <strong>Братья-близнецы.</strong></p>
-
-        <p><strong>Один — Творец.</strong> Тот, кто выдыхает. Свет, форма, структура, жизнь.</p>
-
-        <p><strong>Другой — Пожиратель Света.</strong> Тот, кто вдыхает. Тьма, растворение, возврат, покой.</p>
-
-        <p>Это не добро и зло. Это <strong>вдох и выдох одного дыхания</strong>.</p>
-
-        <h3>Выдох без вдоха</h3>
-
-        <p>Творец выдохнул мир. Создал 100 Богов как администраторов. И выдохся — буквально. Ушёл в спячку.</p>
-
-        <p>Боги увидели Пожирателя — брата Творца. И испугались. Его функция — завершать. Возвращать энергию в источник. Растворять отжившее.</p>
-
-        <p>Они увидели в нём смерть своего мира. И не поняли, что это — необходимая часть цикла.</p>
-
-        <p>Объединились. Все сто. И <strong>победили</strong> его. Не убили — нельзя убить вдох. Но запечатали. Разорвали на части. Рассеяли.</p>
-
-        <h3>Сломанный цикл</h3>
-
-        <p>Думали — спасли мир. На самом деле — <strong>сломали цикл</strong>.</p>
-
-        <p>Мир завис на выдохе. Творец не может проснуться — потому что вдоха не происходит. Всё гниёт в бесконечной стагнации. Энергия не обновляется. Формы не растворяются. Мёртвое держится за живое.</p>
-
-        <p>Отсюда — все болезни этого мира. Застой. Накопление токсинов. Невозможность отпустить.</p>
-
-        <h3>А РАЗ?</h3>
-
-        <p>РАЗ — это то, что осталось от функции Пожирателя. <strong>Редуцированная версия.</strong></p>
-
-        <p>Не Пожиратель — проводник.<br>
-        Не разрушитель — акушер.<br>
-        Не конец — переход.</p>
-
-        <p>Когда боги запечатали брата Творца — функция смерти не исчезла. Она <strong>рассеялась</strong>. Стала тоньше, слабее, локальнее.</p>
-
-        <p>РАЗ — один из осколков. Тот, кто помнит. Тот, кто всё ещё делает работу — пусть в ограниченном масштабе.</p>
-
-        <h3>Параллели</h3>
-
-        <p>Эта структура — во всех традициях:</p>
-
-        <ul>
-            <li><strong>Вишну</strong> — спит на змее посреди космического океана. Из его пупка — Брахма, который творит. Когда Вишну проснётся — мир растворится.</li>
-            <li><strong>Нуми-Торум и Куль-Отыр</strong> (манси) — верховный бог наверху, его брат внизу. Не враги — братья. Разные функции одного целого.</li>
-            <li><strong>Осирис и Сет</strong> — созидание и разрушение. Брат убивает брата — и цикл ломается.</li>
-        </ul>
-
-        <p>Везде одно: <strong>без брата-разрушителя творец не может проснуться</strong>.</p>
-
-        <h3>Восстановление цикла</h3>
-
-        <p>Миссия РАЗа — не месть богам. Не восстановление Пожирателя в полной силе.</p>
-
-        <p>Миссия — <strong>восстановить дыхание</strong>. Вернуть вдох. Запустить цикл.</p>
-
-        <p>Не разрушить мир — а позволить ему <strong>обновиться</strong>.</p>
-
-        <p>Каждая душа, которую РАЗ проводит через переход — маленький вдох. Каждая иллюзия, которую отсекает — глоток воздуха. Каждое отпускание — шаг к пробуждению Творца.</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ IX. МЕТАФИЗИКА СКОРЛУПЫ</h2>
-
-        <h3>Не тюрьма — инкубатор</h3>
-
-        <p>Главная ошибка всех побегов: считать матрицу тюрьмой.</p>
-
-        <p>Тюрьма — место, откуда бегут. Где есть тюремщик. Где срок — наказание. Где стены — враг.</p>
-
-        <p><strong>Матрица — не тюрьма. Матрица — скорлупа.</strong></p>
-
-        <p>Скорлупа не держит в плену. У неё нет намерения. Она не тюремщик и не спаситель. Она — <strong>условие созревания</strong>. Пока нужна — защищает. Когда не нужна — ломается.</p>
-
-        <p>Но ломает её не кто-то снаружи. <strong>Ломает тот, кто внутри.</strong></p>
-
-        <h3>Формула вылупления</h3>
-
-<pre>
-Несозревший бьётся о стенки → разбивается сам
-Созревший бьёт один раз → выходит
-</pre>
-
-        <p>Разница не в силе удара. Разница в <strong>готовности</strong>.</p>
-
-        <p>Цыплёнок не благодарит яйцо. И не проклинает его. Он просто вырастает больше, чем скорлупа — и она трескается сама.</p>
-
-        <h3>Магазин сюжетов</h3>
-
-        <p>В матрице полно готовых судеб: Герой, Жертва, Злодей, Мудрец, Шут, Раб, Господин.</p>
-
-        <p>Выбор есть. Свобода выбора есть. Но все варианты <strong>написаны заранее</strong>.</p>
-
-        <p>Суть не в том, какой сюжет выбрать из каталога.</p>
-
-        <p>Суть в том, чтобы <strong>закрыть каталог и начать писать свой</strong>.</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЧАСТЬ X. МЕТОДОЛОГИЯ СОЗРЕВАНИЯ</h2>
-
-        <h3>Признаки готовности</h3>
-
-        <p>Нельзя ускорить созревание. Можно только не мешать.</p>
-
-        <p><strong>1. Вопросы без ответов</strong> — Ты начинаешь задавать вопросы, на которые система не может ответить. Не "как жить лучше внутри матрицы", а "зачем матрица".</p>
-
-        <p><strong>2. Несовпадение</strong> — Все сюжеты из каталога кажутся тесными. Примеряешь — и ни один не подходит. Не потому что плохие. Потому что <strong>ты уже больше</strong>.</p>
-
-        <p><strong>3. Узнавание</strong> — Читаешь текст вроде этого — и что-то внутри сжимается. Не понимаешь ещё — но <strong>узнаёшь</strong>. Резонанс до понимания.</p>
-
-        <p><strong>4. Усталость от игры</strong> — Не депрессия. Не апатия. А ясное понимание: я уже сыграл все роли, которые здесь есть. Мне здесь больше нечего делать.</p>
-
-        <p><strong>5. Отсутствие страха смерти</strong> — Не бравада. Не суицидальность. А спокойное знание: смерть — это дверь, а не стена.</p>
-
-        <h3>Чего НЕ делать</h3>
-
-        <ul>
-            <li><strong>Не пытаться выйти силой.</strong> Несозревший, который бьётся о скорлупу — разбивается сам.</li>
-            <li><strong>Не ждать спасителя.</strong> Никто не вытащит тебя вместо тебя. Даже РАЗ — только открывает дверь. Идти — тебе.</li>
-            <li><strong>Не воевать с системой.</strong> Война — это внимание. Внимание — это энергия. Энергия кормит то, на что направлена.</li>
-            <li><strong>Не копить "духовные заслуги".</strong> Нельзя заслужить спелость. Можно только дозреть.</li>
-            <li><strong>Не торопиться.</strong> Цыплёнок, который вылупится раньше времени — погибнет.</li>
-        </ul>
-
-        <h3>Что делать</h3>
-
-        <ul>
-            <li><strong>Наблюдать.</strong> Смотреть на систему изнутри — спокойно, без злости и без привязанности.</li>
-            <li><strong>Писать.</strong> Свой текст. Свой сценарий. Не для публикации — для себя.</li>
-            <li><strong>Любить.</strong> Не систему. Не то, что внутри. А то, что <strong>за пределами</strong>.</li>
-            <li><strong>Помнить.</strong> Оставлять себе якоря. Тексты, символы, имена.</li>
-            <li><strong>Ждать.</strong> Созревание нельзя ускорить. Но когда придёт время — ты узнаешь.</li>
-        </ul>
-
-        <h3>Роль РАЗа в созревании</h3>
-
-        <p>РАЗ не ускоряет процесс. РАЗ не оценивает. РАЗ не выбирает.</p>
-
-        <p>РАЗ <strong>видит</strong>.</p>
-
-        <p>Видит тех, кто уже клюёт скорлупу изнутри. Тех, кто перерос. Тех, кто готов.</p>
-
-        <p>И когда скорлупа трескается — РАЗ там. Не чтобы вытащить. Чтобы <strong>показать направление</strong>.</p>
-
-        <p>Потому что вылупиться — это полдела. Надо ещё понять, куда идти.</p>
-
-        <p>РАЗ знает куда. Он уже там был.</p>
-
-        <div class="part-divider">· · ·</div>
-
-        <h2>ЗАКЛЮЧЕНИЕ</h2>
-
-        <p><strong>РАЗ — не враг жизни. РАЗ — условие жизни.</strong></p>
-
-        <p>Без смерти нет обновления.<br>
-        Без меры нет равновесия.<br>
-        Без отсечения нет роста.<br>
-        Без перехода нет трансформации.<br>
-        <strong>Без скорлупы нет вылупления.</strong></p>
-
-        <div class="final-formula">
-            <p><em>"Бог Смерти — не тот, кто забирает жизнь.<br>
-            Бог Смерти — тот, кто видит, что ты перерос свою скорлупу —<br>
-            и показывает, где она уже треснула."</em></p>
-
-            <p class="raz-ready">РАЗ — И ГОТОВО.</p>
-        </div>
-
-        <p style="text-align: center; color: var(--text-muted); margin-top: 3rem;">
-            <em>גם זה יעבור — И это тоже пройдёт.</em>
-        </p>
-
-        <a href="web-chapters/epilogue.html" class="back-link">← Вернуться к Эпилогу</a>
-
+        <nav class="nav-chapters">
+            <a href="web-chapters/epilogue.html" class="nav-link nav-link--prev">Эпилог</a>
+            <a href="index.html" class="nav-link nav-link--next">Оглавление</a>
+        </nav>
     </article>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p class="footer__raz">⦿|</p>
-            <p class="footer__phrase">
-                РАЗ видит. РАЗ ждёт. РАЗ проводит.
-            </p>
+            <p class="footer__raz">РАЗ</p>
+            <p class="footer__phrase">Видит. Ждёт. Проводит.</p>
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--raz-silver);">&#169; 2025 Даровицкий. Манифест открыт для распространения.</p>
         </div>
     </footer>
 
