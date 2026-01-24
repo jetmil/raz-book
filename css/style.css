@@ -740,6 +740,28 @@ pre code {
     color: var(--yolk-deep);
 }
 
+/* RAZ highlight — выделение имени РАЗ */
+.raz-highlight {
+    color: var(--raz-purple);
+    font-weight: bold;
+    text-shadow: 0 0 10px var(--raz-glow);
+}
+
+/* Bonus link — ссылка на бонусный материал */
+.bonus-link {
+    color: var(--raz-purple);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--raz-purple);
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+}
+
+.bonus-link:hover {
+    color: var(--yolk);
+    border-bottom-color: var(--yolk);
+    text-shadow: 0 0 15px var(--raz-glow);
+}
+
 /* ==========================================
    CRACK DIVIDER — Разделитель-трещина
    ========================================== */
